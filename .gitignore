@@ -1,4 +1,6 @@
 # idea
 .idea
-*.mvn
 *.iml
+
+# maven
+*.mvn
