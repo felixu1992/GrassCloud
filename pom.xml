@@ -25,6 +25,9 @@
     <modules>
         <module>Common</module>
         <module>EurekaServer</module>
+        <module>ConfigServer</module>
+        <module>GatewayServer</module>
+        <module>OauthServer</module>
     </modules>
 
     <dependencyManagement>
