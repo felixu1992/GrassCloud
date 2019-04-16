@@ -28,6 +28,8 @@
         <module>ConfigServer</module>
         <module>GatewayServer</module>
         <module>OauthServer</module>
+        <module>MonitorServer</module>
+        <module>BaseServer</module>
     </modules>
 
     <dependencyManagement>
