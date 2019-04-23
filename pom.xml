@@ -33,6 +33,15 @@
         <module>GeneratorServer</module>
     </modules>
 
+    <dependencies>
+        <!-- TEST  -->
+        <dependency>
+            <groupId>org.springframework.boot</groupId>
+            <artifactId>spring-boot-starter-test</artifactId>
+            <scope>test</scope>
+        </dependency>
+    </dependencies>
+
     <dependencyManagement>
         <dependencies>
             <dependency>

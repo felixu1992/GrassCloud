@@ -1,0 +1,19 @@
+spring:
+  profiles:
+    active: dev
+---
+spring:
+  application:
+    name: GatewayServer
+  profiles: dev
+  cloud:
+    config:
+      uri: http://localhost:8762
+      fail-fast: true
+---
+spring:
+  profiles: prd
+  cloud:
+    config:
+      uri: http://localhost:8762
+      fail-fast: true

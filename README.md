@@ -24,7 +24,7 @@
 任务列表：
 
 - [x] 基础模块创建
-- [ ] 基础Spring Cloud运行起来
+- [x] 基础Spring Cloud运行起来
 - [ ] 使用Spring Cloud Oauth2授权认证
 - [ ] Base服务，即用户服务构建
 - [ ] 完善Base服务    
