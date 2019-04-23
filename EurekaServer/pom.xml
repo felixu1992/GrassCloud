@@ -20,5 +20,10 @@
             <groupId>org.springframework.cloud</groupId>
             <artifactId>spring-cloud-starter-netflix-eureka-server</artifactId>
         </dependency>
+
+        <dependency>
+            <groupId>top.felixu.grass</groupId>
+            <artifactId>Common</artifactId>
+        </dependency>
     </dependencies>
 </project>
