@@ -30,6 +30,7 @@
         <module>OauthServer</module>
         <module>MonitorServer</module>
         <module>BaseServer</module>
+        <module>GeneratorServer</module>
     </modules>
 
     <dependencyManagement>
