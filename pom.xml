@@ -19,28 +19,54 @@
     </properties>
 
     <groupId>top.felixu.grass</groupId>
-    <artifactId>GrassCloud</artifactId>
+    <artifactId>grass-cloud</artifactId>
     <packaging>pom</packaging>
     <version>1.0.0</version>
 
     <modules>
-        <module>Common</module>
-        <module>EurekaServer</module>
-        <module>ConfigServer</module>
-        <module>GatewayServer</module>
-        <module>OauthServer</module>
-        <module>MonitorServer</module>
-        <module>BaseServer</module>
-        <module>GeneratorServer</module>
+        <module>common</module>
+        <module>eureka-server</module>
+        <module>config-server</module>
+        <module>gateway-server</module>
+        <module>oauth-server</module>
+        <module>monitor-server</module>
+        <module>base-server</module>
+        <module>generator-server</module>
     </modules>
 
     <dependencies>
+        <!-- Eureka Client -->
         <dependency>
-            <groupId>org.springframework.boot</groupId>
-            <artifactId>spring-boot-starter-web</artifactId>
+            <groupId>org.springframework.cloud</groupId>
+            <artifactId>spring-cloud-starter-netflix-eureka-client</artifactId>
         </dependency>
 
-        <!-- TEST  -->
+        <!-- Sleuth -->
+        <dependency>
+            <groupId>org.springframework.cloud</groupId>
+            <artifactId>spring-cloud-starter-sleuth</artifactId>
+        </dependency>
+
+        <!-- Zipkin -->
+        <dependency>
+            <groupId>org.springframework.cloud</groupId>
+            <artifactId>spring-cloud-sleuth-zipkin</artifactId>
+        </dependency>
+
+
+        <!-- Hystrix -->
+        <dependency>
+            <groupId>org.springframework.cloud</groupId>
+            <artifactId>spring-cloud-starter-netflix-hystrix</artifactId>
+        </dependency>
+
+        <!-- Lombok -->
+        <dependency>
+            <groupId>org.projectlombok</groupId>
+            <artifactId>lombok</artifactId>
+        </dependency>
+
+        <!-- Test  -->
         <dependency>
             <groupId>org.springframework.boot</groupId>
             <artifactId>spring-boot-starter-test</artifactId>
@@ -58,13 +84,13 @@
                 <scope>import</scope>
             </dependency>
 
-
             <dependency>
-                <groupId>top.felixu.grass</groupId>
-                <artifactId>Common</artifactId>
-                <version>1.0.0</version>
+                <groupId>org.springframework.cloud</groupId>
+                <artifactId>common-bom</artifactId>
+                <version>${project.version}</version>
+                <type>pom</type>
+                <scope>import</scope>
             </dependency>
-
         </dependencies>
     </dependencyManagement>
 

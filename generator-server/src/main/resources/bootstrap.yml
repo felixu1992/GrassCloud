@@ -1,0 +1,17 @@
+spring:
+  profiles:
+    active: dev
+---
+spring:
+  application:
+    name: Generator
+  profiles: dev
+  cloud:
+    config:
+      uri: http://localhost:8762
+      fail-fast: true
+grass:
+  swagger:
+    title: 傻逼
+server:
+  port: 8764
