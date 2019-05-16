@@ -5,14 +5,16 @@
 
     <parent>
         <groupId>top.felixu.grass</groupId>
-        <artifactId>GrassCloud</artifactId>
+        <artifactId>grass-cloud</artifactId>
         <version>1.0.0</version>
     </parent>
 
     <artifactId>gateway-server</artifactId>
     <version>1.0.0</version>
+    <packaging>jar</packaging>
     <name>GatewayServer</name>
     <description>GrassCloud's Gateway</description>
+
 
     <dependencies>
         <!-- Config Client -->
@@ -31,6 +33,19 @@
         <dependency>
             <groupId>org.springframework.cloud</groupId>
             <artifactId>spring-cloud-starter-gateway</artifactId>
+        </dependency>
+
+        <!-- swagger -->
+        <dependency>
+            <groupId>io.springfox</groupId>
+            <artifactId>springfox-swagger2</artifactId>
+            <version>${swagger.version}</version>
+        </dependency>
+
+        <dependency>
+            <groupId>io.springfox</groupId>
+            <artifactId>springfox-swagger-ui</artifactId>
+            <version>${swagger.version}</version>
         </dependency>
     </dependencies>
 </project>

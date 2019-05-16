@@ -4,7 +4,7 @@
 	<modelVersion>4.0.0</modelVersion>
 	<parent>
 		<groupId>top.felixu.grass</groupId>
-		<artifactId>GrassCloud</artifactId>
+		<artifactId>grass-cloud</artifactId>
 		<version>1.0.0</version>
 	</parent>
 
@@ -14,10 +14,15 @@
 	<description>Demo project for Spring Boot</description>
 
 	<dependencies>
-		<!-- Common -->
+		<!-- common-swagger -->
 		<dependency>
 			<groupId>top.felixu.grass</groupId>
-			<artifactId>Common</artifactId>
+			<artifactId>common-swagger</artifactId>
+		</dependency>
+
+		<dependency>
+			<groupId>org.springframework.boot</groupId>
+			<artifactId>spring-boot-starter-web</artifactId>
 		</dependency>
 
 		<dependency>
@@ -28,9 +33,9 @@
 			<groupId>org.springframework.cloud</groupId>
 			<artifactId>spring-cloud-starter-netflix-eureka-client</artifactId>
 		</dependency>
-		<dependency>
-			<groupId>org.springframework.cloud</groupId>
-			<artifactId>spring-cloud-starter-oauth2</artifactId>
-		</dependency>
+		<!--		<dependency>-->
+<!--			<groupId>org.springframework.cloud</groupId>-->
+<!--			<artifactId>spring-cloud-starter-oauth2</artifactId>-->
+<!--		</dependency>-->
 	</dependencies>
 </project>

@@ -10,10 +10,24 @@ spring:
     config:
       uri: http://localhost:8762
       fail-fast: true
----
-spring:
-  profiles: prd
-  cloud:
-    config:
-      uri: http://localhost:8762
-      fail-fast: true
+    gateway:
+      discovery:
+        locator:
+          enabled: true
+#      routes:
+#      - id: BaseServer
+#        uri: http://localhost:8763
+#        predicates:
+#        - Path=/baseserver/*
+#      - id: GeneratorServer
+#        uri: http://localhost:8764
+#        predicates:
+#        - Path=/generatorserver/*
+
+#---
+#spring:
+#  profiles: prd
+#  cloud:
+#    config:
+#      uri: http://localhost:8762
+#      fail-fast: true

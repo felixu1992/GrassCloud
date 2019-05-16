@@ -4,7 +4,7 @@
     <modelVersion>4.0.0</modelVersion>
     <parent>
         <groupId>top.felixu.grass</groupId>
-        <artifactId>GrassCloud</artifactId>
+        <artifactId>grass-cloud</artifactId>
         <version>1.0.0</version>
     </parent>
 
@@ -15,10 +15,9 @@
 
 
     <dependencies>
-        <!-- Common -->
         <dependency>
             <groupId>top.felixu.grass</groupId>
-            <artifactId>Common</artifactId>
+            <artifactId>common-swagger</artifactId>
         </dependency>
 
         <!-- Mybatis-Plus's Generator -->
