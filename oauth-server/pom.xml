@@ -9,28 +9,21 @@
     </parent>
 
     <artifactId>oauth-server</artifactId>
-    <version>1.0.0</version>
-    <name>OauthServer</name>
-    <description>Demo project for Spring Boot</description>
+    <packaging>jar</packaging>
+
+    <description>授权服务</description>
 
     <dependencies>
+        <!-- Config Client -->
         <dependency>
             <groupId>org.springframework.cloud</groupId>
             <artifactId>spring-cloud-starter-config</artifactId>
         </dependency>
-        <dependency>
-            <groupId>org.springframework.cloud</groupId>
-            <artifactId>spring-cloud-starter-netflix-eureka-client</artifactId>
-        </dependency>
+
+        <!-- Oauth Server -->
         <dependency>
             <groupId>org.springframework.cloud</groupId>
             <artifactId>spring-cloud-starter-oauth2</artifactId>
-        </dependency>
-
-        <dependency>
-            <groupId>org.springframework.boot</groupId>
-            <artifactId>spring-boot-starter-test</artifactId>
-            <scope>test</scope>
         </dependency>
     </dependencies>
 </project>

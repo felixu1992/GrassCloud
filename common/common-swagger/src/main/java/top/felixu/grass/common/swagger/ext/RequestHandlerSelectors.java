@@ -1,4 +1,4 @@
-package top.felixu.grass.common.utils;
+package top.felixu.grass.common.swagger.ext;
 
 import com.google.common.base.Function;
 import com.google.common.base.Optional;
@@ -14,7 +14,7 @@ import java.util.regex.Pattern;
  * @date 2019.04.23
  * @see springfox.documentation.builders.RequestHandlerSelectors
  */
-public class SwaggerExtUtils {
+public class RequestHandlerSelectors {
 
     public static Predicate<RequestHandler> basePackage(final String basePackage) {
         return input -> {
