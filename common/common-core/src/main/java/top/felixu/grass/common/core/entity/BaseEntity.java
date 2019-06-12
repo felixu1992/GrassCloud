@@ -1,9 +1,11 @@
-package top.felixu.grass.common.entity;
+package top.felixu.grass.common.core.entity;
 
 import java.io.Serializable;
 import java.time.LocalDateTime;
 
 /**
+ * 抽取公有字段的实体
+ *
  * @author felixu
  * @date 2019.04.23
  */
