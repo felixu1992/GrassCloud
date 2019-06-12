@@ -1,6 +1,7 @@
 package top.felixu.grass.common.core.dto;
 
 import lombok.AllArgsConstructor;
+import lombok.Data;
 import org.springframework.validation.BindingResult;
 import org.springframework.validation.FieldError;
 import top.felixu.grass.common.core.exception.ErrorCode;
@@ -14,6 +15,7 @@ import java.util.stream.Collectors;
  * @author felixu
  * @date 2019.06.11
  */
+@Data
 @AllArgsConstructor
 public class BaseResp<T> implements Serializable {
 
