@@ -16,5 +16,6 @@
         <module>common-swagger</module>
         <module>common-bom</module>
         <module>common-core</module>
+        <module>common-datasource</module>
     </modules>
 </project>
