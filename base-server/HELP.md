@@ -1,7 +1,5 @@
-# Getting Started
-
-### Reference Documentation
-For further reference, please consider the following sections:
-
-* [Official Apache Maven documentation](https://maven.apache.org/guides/index.html)
-
+# 基础服务
+即用户服务    
+采用RBAC的权限控制模型     
+连接grass-user数据库    
+处理用户、组织、菜单、权限等逻辑

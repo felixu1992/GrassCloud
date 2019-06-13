@@ -53,9 +53,9 @@ public class AuthorizationServerConfig extends AuthorizationServerConfigurerAdap
 
     @Bean
     protected JwtAccessTokenConverter jwtTokenEnhancer() {
-        KeyStoreKeyFactory keyStoreKeyFactory = new KeyStoreKeyFactory(new ClassPathResource("grass-jwt.jks"), "grass".toCharArray());
+        KeyStoreKeyFactory keyStoreKeyFactory = new KeyStoreKeyFactory(new ClassPathResource("grass-cloud.jks"), "grass-cloud".toCharArray());
         JwtAccessTokenConverter converter = new JwtAccessTokenConverter();
-        converter.setKeyPair(keyStoreKeyFactory.getKeyPair("grass-jwt"));
+        converter.setKeyPair(keyStoreKeyFactory.getKeyPair("grass-cloud"));
         return converter;
     }
 }

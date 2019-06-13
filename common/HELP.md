@@ -3,4 +3,6 @@
 
 - `common-bom` 对`common`包下的子模块做版本控制，在引用时避免写版本号。
 - `common-core` `common`的核心包，用于放置通用的`utils`、`exception`、`dto`、`form`等等。
-- `common-swagger` `swagger`相关，引用该模块，即拥有`swagger`的能力。
+- `common-swagger` `swagger`相关，引用该模块，即拥有`swagger`的能力。      
+- `common-datasource` 数据连接能力   
+- `common-security` oauth2客户端
