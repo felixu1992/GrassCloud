@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="top.felixu.grass.oauthserver.dao.UserInfoMapper">
+
+    <resultMap id="grantedAuthorities" type="top.felixu.grass.oauthserver.entity.GrantedAuthority">
+        <result property="name" column="permission"></result>
+    </resultMap>
+
+    <resultMap  id="userDetails" type="top.felixu.grass.oauthserver.entity.UserDetails">
+        <id property="id" column="id"/>
+        <result property="employeeNum" column="employee_num" />
+        <result property="password" column="password"></result>
+        <result property="realname" column="realname"></result>
+        <collection property="grantedAuthorities" resultMap="grantedAuthorities"></collection>
+    </resultMap>
+
+    <select id="getUserByEmployeeNum" resultMap="userDetails">
+        SELECT a.id ,a.user_id,a.password,a.realname,b.role_id as permission from  sys_user a
+        LEFT JOIN sys_user_role b on a.user_id=b.user_id WHERE a.user_id=#{user_id}
+    </select>
+</mapper>

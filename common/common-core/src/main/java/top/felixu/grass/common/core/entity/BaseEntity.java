@@ -1,5 +1,7 @@
 package top.felixu.grass.common.core.entity;
 
+import lombok.Data;
+
 import java.io.Serializable;
 import java.time.LocalDateTime;
 
@@ -9,6 +11,7 @@ import java.time.LocalDateTime;
  * @author felixu
  * @date 2019.04.23
  */
+@Data
 public class BaseEntity implements Serializable {
 
     private static final long serialVersionUID = 1L;
@@ -25,7 +28,7 @@ public class BaseEntity implements Serializable {
     /**
      * 创建人
      */
-    private String createBy;
+    private Long createBy;
 
     /**
      * 更新时间
@@ -35,5 +38,5 @@ public class BaseEntity implements Serializable {
     /**
      * 更新人
      */
-    private String updateBy;
+    private Long updateBy;
 }

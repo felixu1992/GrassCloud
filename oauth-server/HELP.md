@@ -1,7 +1,5 @@
-# Getting Started
+# 认证授权中心
 
-### Reference Documentation
-For further reference, please consider the following sections:
-
-* [Official Apache Maven documentation](https://maven.apache.org/guides/index.html)
-
+使用Spring Cloud Oauth2     
+使用jwt的token，在auth服务下发token
+使用JDK自带的证书库生成的证书
