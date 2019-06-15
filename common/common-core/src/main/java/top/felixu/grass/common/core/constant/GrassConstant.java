@@ -13,5 +13,6 @@ public interface GrassConstant {
      */
     interface Server {
         String OAUTH = "OauthServer";
+        String BASE = "BaseServer";
     }
 }
