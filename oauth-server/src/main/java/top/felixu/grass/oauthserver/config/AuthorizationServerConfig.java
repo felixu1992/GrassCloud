@@ -34,16 +34,18 @@ public class AuthorizationServerConfig extends AuthorizationServerConfigurerAdap
     @Override
     public void configure(ClientDetailsServiceConfigurer clients) throws Exception {
         clients.inMemory()
-                .withClient("grass").secret("felixu")
+                .withClient("grass").secret("c9b43c7fa02b23f117ccb630c2ff628d")
                 .scopes("service")
                 .autoApprove(true)
                 .authorizedGrantTypes("implicit", "refresh_token", "password", "authorization_code")
-                .accessTokenValiditySeconds(365 * 24 * 12 * 300);
+                // 过期时间，以秒为单位
+                .accessTokenValiditySeconds(3 * 60);
     }
 
     @Override
     public void configure(AuthorizationServerEndpointsConfigurer endpoints) {
-        endpoints.tokenStore(tokenStore()).tokenEnhancer(jwtTokenEnhancer()).authenticationManager(authenticationManager);
+        endpoints.tokenStore(tokenStore()).tokenEnhancer(jwtTokenEnhancer())
+                .authenticationManager(authenticationManager);
     }
 
     @Bean

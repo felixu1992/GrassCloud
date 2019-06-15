@@ -1,5 +1,5 @@
 # GrassCloud
-随便玩玩，微服务构建的企业协同系统
+随便玩玩，微服务构建的企业OA系统
 
 所用技术：
 
@@ -12,13 +12,13 @@
 模块介绍：
 
 - common：公共模块
-- eureka-server：注册中心
-- config-server：配置中心
-- gateway-server：网关
-- generator-server：代码生成
-- monitor-server：监控
-- oauth-server：授权认证中心
-- base-server：用户服务，即整个微服务中最核心的服务
+- eureka-server：注册中心，端口8761
+- config-server：配置中心，端口8762
+- gateway-server：网关，端口8763
+- monitor-server：监控，端口8764
+- oauth-server：授权认证中心，端口8765
+- base-server：用户服务，端口7761
+- generator-server：代码生成，端口7762
 
 任务列表：
 
@@ -26,7 +26,7 @@
 - [x] 基础Spring Cloud运行起来
 - [x] 整理依赖
 - [ ] 使用Spring Cloud Oauth2授权认证
-- [ ] 用户服务
+- [ ] 用户服务`
 - [ ] 日志服务
 - [ ] 数据字典服务
 - [ ] 文件上传服务
@@ -43,6 +43,6 @@
 大体遵循阿里规范    
 暴露到外部的接口走外部`Controller`    
 架构内部调用走`InnerController`    
-请求入参使用`Form`后缀，使用validation做基础校验     
+请求入参使用`Form`后缀，使用`validation` 做基础校验     
 出参使用`DTO`后缀     
 统一返回结果，包括错误返回

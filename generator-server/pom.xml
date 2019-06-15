@@ -34,6 +34,7 @@
             <version>2.1</version>
         </dependency>
 
+        <!-- Config Client -->
         <dependency>
             <groupId>org.springframework.cloud</groupId>
             <artifactId>spring-cloud-starter-config</artifactId>

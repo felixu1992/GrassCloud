@@ -1,7 +1,2 @@
-# Getting Started
-
-### Reference Documentation
-For further reference, please consider the following sections:
-
-* [Official Apache Maven documentation](https://maven.apache.org/guides/index.html)
-
+# 监控中心
+采用`Spring Cloud Admin`做监控
