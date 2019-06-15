@@ -20,6 +20,7 @@
 			<artifactId>common-swagger</artifactId>
 		</dependency>
 
+		<!-- Config Client -->
 		<dependency>
 			<groupId>org.springframework.cloud</groupId>
 			<artifactId>spring-cloud-starter-config</artifactId>
@@ -31,10 +32,9 @@
 			<artifactId>common-datasource</artifactId>
 		</dependency>
 
-		<!-- Oauth Server -->
 		<dependency>
-			<groupId>org.springframework.cloud</groupId>
-			<artifactId>spring-cloud-starter-oauth2</artifactId>
+			<groupId>top.felixu.grass</groupId>
+			<artifactId>common-core</artifactId>
 		</dependency>
 	</dependencies>
 </project>
