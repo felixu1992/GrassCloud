@@ -5,6 +5,7 @@ import org.springframework.boot.SpringApplication;
 import org.springframework.cloud.client.SpringCloudApplication;
 import org.springframework.cloud.openfeign.EnableFeignClients;
 import org.springframework.context.annotation.ComponentScan;
+import top.felixu.grass.common.core.constant.GrassConstant;
 
 /**
  * @author felixu
@@ -12,8 +13,8 @@ import org.springframework.context.annotation.ComponentScan;
  */
 @EnableFeignClients
 @SpringCloudApplication
-@MapperScan(basePackages = "top.felixu")
-@ComponentScan(basePackages = "top.felixu")
+@MapperScan(GrassConstant.BasePackage.NAME)
+@ComponentScan(GrassConstant.BasePackage.NAME)
 public class OauthServerApplication {
 
     public static void main(String[] args) {

@@ -49,6 +49,12 @@
                 <artifactId>common-security</artifactId>
                 <version>${grass.version}</version>
             </dependency>
+
+            <dependency>
+                <groupId>top.felixu.grass</groupId>
+                <artifactId>common-logging</artifactId>
+                <version>${grass.version}</version>
+            </dependency>
         </dependencies>
     </dependencyManagement>
 </project>

@@ -1,4 +1,4 @@
-package top.felixu.security.config;
+package top.felixu.grass.common.security.config;
 
 import org.springframework.context.annotation.Configuration;
 import org.springframework.security.config.annotation.method.configuration.EnableGlobalMethodSecurity;

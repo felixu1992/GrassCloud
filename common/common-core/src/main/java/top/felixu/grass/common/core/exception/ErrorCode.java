@@ -13,7 +13,7 @@ import lombok.ToString;
 @AllArgsConstructor
 public enum ErrorCode {
     /**
-     * 常规状态
+     * 自定义错误
      */
     SUCCESS(0, "OK"),
     FAIL(-1, "操作失败"),

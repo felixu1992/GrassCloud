@@ -9,6 +9,13 @@ package top.felixu.grass.common.core.constant;
 public interface GrassConstant {
 
     /**
+     * 扫描包
+     */
+    interface BasePackage {
+        String NAME = "top.felixu.grass";
+    }
+
+    /**
      * 微服务名称
      */
     interface Server {
