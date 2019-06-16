@@ -31,3 +31,7 @@ spring:
 grass:
   swagger:
     title: 傻逼
+  security:
+    resourceId: ${spring.application.name}
+    regexMatchers: .*swagger.*", ".*v2.*"," .*webjars.*", "/user/login.*", "/validate.*", /user/reset-password.*
+    antMatchers: /**

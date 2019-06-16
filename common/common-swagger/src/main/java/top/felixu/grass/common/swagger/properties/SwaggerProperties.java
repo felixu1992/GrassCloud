@@ -3,6 +3,7 @@ package top.felixu.grass.common.swagger.properties;
 import lombok.Data;
 import lombok.NoArgsConstructor;
 import org.springframework.boot.context.properties.ConfigurationProperties;
+import org.springframework.boot.context.properties.EnableConfigurationProperties;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -15,6 +16,7 @@ import java.util.List;
  */
 @Data
 @ConfigurationProperties(prefix = "grass.swagger")
+@EnableConfigurationProperties(SwaggerProperties.class)
 public class SwaggerProperties {
 
     /**
