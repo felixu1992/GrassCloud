@@ -10,16 +10,19 @@
     {
       "name": "grass.security.ant-matchers",
       "type": "java.lang.String[]",
+      "description": "被拦截的路径",
       "sourceType": "top.felixu.grass.common.security.properties.SecurityProperties"
     },
     {
       "name": "grass.security.regex-matchers",
       "type": "java.lang.String[]",
+      "description": "不被拦截的路径",
       "sourceType": "top.felixu.grass.common.security.properties.SecurityProperties"
     },
     {
       "name": "grass.security.resource-id",
       "type": "java.lang.String",
+      "description": "资源服务器ID",
       "sourceType": "top.felixu.grass.common.security.properties.SecurityProperties"
     }
   ],

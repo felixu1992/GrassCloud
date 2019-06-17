@@ -30,7 +30,7 @@ spring:
       maxOpenPreparedStatements: 100
 grass:
   swagger:
-    title: 傻逼
+    title:
   security:
     resourceId: ${spring.application.name}
     regexMatchers: .*swagger.*", ".*v2.*"," .*webjars.*", "/user/login.*", "/validate.*", /user/reset-password.*

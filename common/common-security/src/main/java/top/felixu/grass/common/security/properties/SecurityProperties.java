@@ -15,7 +15,16 @@ import org.springframework.stereotype.Component;
 @EnableConfigurationProperties(SecurityProperties.class)
 public class SecurityProperties {
 
+    /**
+     * 不被拦截的路径
+     */
     private String[] regexMatchers;
+    /**
+     * 被拦截的路径
+     */
     private String[] antMatchers;
+    /**
+     * 资源服务器ID
+     */
     private String resourceId;
 }
