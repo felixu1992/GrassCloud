@@ -12,4 +12,12 @@
 
     <artifactId>common-logging</artifactId>
     <packaging>jar</packaging>
+
+    <dependencies>
+        <!-- Common Core -->
+        <dependency>
+            <groupId>top.felixu.grass</groupId>
+            <artifactId>common-core</artifactId>
+        </dependency>
+    </dependencies>
 </project>
