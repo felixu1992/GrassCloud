@@ -1,0 +1,19 @@
+{
+  "groups": [
+    {
+      "name": "grass.logging",
+      "type": "top.felixu.grass.common.logging.properties.LoggingProperties",
+      "sourceType": "top.felixu.grass.common.logging.properties.LoggingProperties"
+    }
+  ],
+  "properties": [
+    {
+      "name": "grass.logging.enable",
+      "type": "java.lang.Boolean",
+      "description": "日志开关，默认开启",
+      "sourceType": "top.felixu.grass.common.logging.properties.LoggingProperties",
+      "defaultValue": true
+    }
+  ],
+  "hints": []
+}
