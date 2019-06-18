@@ -10,7 +10,6 @@ import org.springframework.lang.NonNull;
 import top.felixu.grass.common.logging.logger.AccessLoggerListener;
 import top.felixu.grass.common.logging.properties.LoggingProperties;
 import top.felixu.grass.common.logging.support.AccessLoggerSupport;
-import top.felixu.grass.common.logging.support.AccessLoggerSupportAutoConfiguration;
 
 /**
  * @author felixu
@@ -22,15 +21,15 @@ public class LoggerConfig {
     @Bean
     @ConditionalOnProperty(prefix = LoggingProperties.PREFIX, name = "enable",
             matchIfMissing = true, havingValue = "true")
-    public AccessLoggerSupport aopAccessLoggerSupport() {
+    public AccessLoggerSupport accessLoggerSupport() {
         return new AccessLoggerSupport();
     }
 
     @Bean
     @ConditionalOnProperty(prefix = LoggingProperties.PREFIX, name = "enable",
             matchIfMissing = true, havingValue = "true")
-    public AccessLoggerSupportAutoConfiguration.ListenerProcessor listenerProcessor() {
-        return new AccessLoggerSupportAutoConfiguration.ListenerProcessor();
+    public ListenerProcessor listenerProcessor() {
+        return new ListenerProcessor();
     }
 
     public static class ListenerProcessor implements BeanPostProcessor {

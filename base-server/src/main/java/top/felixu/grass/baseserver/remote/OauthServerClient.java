@@ -5,7 +5,7 @@ import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestHeader;
 import org.springframework.web.bind.annotation.RequestParam;
 import top.felixu.grass.baseserver.remote.hystrix.OauthServerHystrix;
-import top.felixu.grass.common.core.constant.GrassConstant;
+import top.felixu.grass.common.core.constants.GrassConstants;
 import top.felixu.grass.common.core.dto.oauth.JwtDTO;
 
 /**
@@ -14,7 +14,7 @@ import top.felixu.grass.common.core.dto.oauth.JwtDTO;
  * @author felixu
  * @date 2019.06.15
  */
-@FeignClient(name = GrassConstant.Server.OAUTH, fallback = OauthServerHystrix.class)
+@FeignClient(name = GrassConstants.Server.OAUTH, fallback = OauthServerHystrix.class)
 public interface OauthServerClient {
 
     /**

@@ -30,8 +30,10 @@ spring:
       maxOpenPreparedStatements: 100
 grass:
   swagger:
-    title:
+    title: ${spring.application.name}'s Api文档
   security:
     resourceId: ${spring.application.name}
     regexMatchers: .*swagger.*", ".*v2.*"," .*webjars.*", "/user/login.*", "/validate.*", /user/reset-password.*
     antMatchers: /**
+  logging:
+    enable: true

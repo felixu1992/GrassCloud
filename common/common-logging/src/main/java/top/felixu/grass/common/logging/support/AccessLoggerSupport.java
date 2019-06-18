@@ -5,6 +5,7 @@ import org.aopalliance.intercept.MethodInterceptor;
 import org.springframework.aop.support.StaticMethodMatcherPointcutAdvisor;
 import org.springframework.core.Ordered;
 import top.felixu.grass.common.core.utils.HttpUtils;
+import top.felixu.grass.common.core.utils.TimeUtils;
 import top.felixu.grass.common.logging.annotation.AccessLogger;
 import top.felixu.grass.common.logging.aop.MethodInterceptorHolder;
 import top.felixu.grass.common.logging.logger.AccessLoggerInfo;
@@ -32,7 +33,6 @@ public class AccessLoggerSupport extends StaticMethodMatcherPointcutAdvisor {
     }
 
     public AccessLoggerSupport() {
-
         setAdvice((MethodInterceptor) methodInvocation -> {
             MethodInterceptorHolder methodInterceptorHolder = MethodInterceptorHolder.create(methodInvocation);
             AccessLoggerInfo info = createLogger(methodInterceptorHolder);
@@ -40,9 +40,10 @@ public class AccessLoggerSupport extends StaticMethodMatcherPointcutAdvisor {
             try {
                 response = methodInvocation.proceed();
                 info.setResponse(response);
-                info.setResponseTime(System.currentTimeMillis());
+                info.setResponseTime(TimeUtils.currentTimeMills());
+                info.setDuration(info.getResponseTime() - info.getRequestTime());
             } catch (Throwable e) {
-                info.setException(e);
+                info.setError(e);
                 throw e;
             } finally {
                 listeners.forEach(listener -> listener.onLogger(info));
@@ -51,23 +52,19 @@ public class AccessLoggerSupport extends StaticMethodMatcherPointcutAdvisor {
         });
     }
 
-    protected AccessLoggerInfo createLogger(MethodInterceptorHolder holder) {
+    private AccessLoggerInfo createLogger(MethodInterceptorHolder holder) {
         AccessLoggerInfo info = new AccessLoggerInfo();
-        info.setRequestTime(System.currentTimeMillis());
-
+        info.setRequestTime(TimeUtils.currentTimeMills());
         AccessLogger ann = holder.findAnnotation(AccessLogger.class);
         info.setAction(ann.value());
-        info.setDescribe(ann.description());
         info.setParameters(holder.getArgs());
         info.setTarget(holder.getTarget().getClass());
         info.setMethod(holder.getMethod());
-
         HttpServletRequest request = HttpUtils.getHttpServletRequest();
         if (null != request) {
             info.setHttpHeaders(HttpUtils.getHeaders(request));
             info.setIp(HttpUtils.getIpAddress(request));
             info.setHttpMethod(request.getMethod());
-            // info.setUrl(request.getRequestURL().toString());
             info.setUrl(request.getRequestURI());
         }
         return info;

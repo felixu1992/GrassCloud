@@ -1,4 +1,4 @@
-package top.felixu.grass.common.core.constant;
+package top.felixu.grass.common.core.constants;
 
 /**
  * 用于存储系统全局变量
@@ -6,7 +6,7 @@ package top.felixu.grass.common.core.constant;
  * @author felixu
  * @date 2019.06.15
  */
-public interface GrassConstant {
+public interface GrassConstants {
 
     /**
      * 扫描包

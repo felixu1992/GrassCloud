@@ -43,6 +43,12 @@
 			<groupId>top.felixu.grass</groupId>
 			<artifactId>common-security</artifactId>
 		</dependency>
+
+		<!-- Common Logger -->
+		<dependency>
+			<groupId>top.felixu.grass</groupId>
+			<artifactId>common-logging</artifactId>
+		</dependency>
 	</dependencies>
 
 	<build>

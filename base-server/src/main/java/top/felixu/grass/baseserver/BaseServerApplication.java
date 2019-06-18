@@ -9,7 +9,7 @@ import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.bind.annotation.RestController;
 import top.felixu.grass.baseserver.remote.OauthServerClient;
-import top.felixu.grass.common.core.constant.GrassConstant;
+import top.felixu.grass.common.core.constants.GrassConstants;
 import top.felixu.grass.common.core.dto.BaseResp;
 import top.felixu.grass.common.core.dto.oauth.JwtDTO;
 import top.felixu.grass.common.swagger.annotation.EnableSwagger;
@@ -23,7 +23,7 @@ import top.felixu.grass.common.swagger.annotation.EnableSwagger;
 @EnableSwagger
 @EnableFeignClients
 @SpringCloudApplication
-@ComponentScan(GrassConstant.BasePackage.NAME)
+@ComponentScan(GrassConstants.BasePackage.NAME)
 public class BaseServerApplication {
 
 	private final OauthServerClient oauthServerClient;
