@@ -11,7 +11,7 @@
 
     <artifactId>monitor-server</artifactId>
     <version>1.0.0</version>
-    <name>MonitorServer</name>
+    <name>monitor-server</name>
     <description>Demo project for Spring Boot</description>
 
     <properties>

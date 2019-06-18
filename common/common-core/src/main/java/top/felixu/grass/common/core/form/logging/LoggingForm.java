@@ -3,7 +3,6 @@ package top.felixu.grass.common.core.form.logging;
 import lombok.Data;
 
 import java.io.Serializable;
-import java.lang.reflect.Method;
 import java.util.Map;
 
 /**
@@ -22,11 +21,10 @@ public class LoggingForm implements Serializable {
     /**
      * 请求方法
      */
-    private Method method;
+    private String method;
     /**
-     * 请求目标类
-     */
-    private Class target;
+     * 请求目  */
+    private String target;
     /**
      * 请求入参
      */

@@ -11,7 +11,7 @@
 
     <artifactId>eureka-server</artifactId>
     <version>1.0.0</version>
-    <name>EurekaServer</name>
+    <name>eureka-server</name>
     <description>GrassCloud's Registry</description>
 
     <dependencies>

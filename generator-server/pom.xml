@@ -10,7 +10,7 @@
 
     <artifactId>generator-server</artifactId>
     <version>1.0.0</version>
-    <name>GeneratorServer</name>
+    <name>generator-server</name>
     <description>GrassCloud code generation module</description>
 
 

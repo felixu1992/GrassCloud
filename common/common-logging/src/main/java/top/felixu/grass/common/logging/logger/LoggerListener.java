@@ -1,8 +1,14 @@
 package top.felixu.grass.common.logging.logger;
 
 import lombok.AllArgsConstructor;
+import org.springframework.amqp.rabbit.connection.CorrelationData;
 import org.springframework.amqp.rabbit.core.RabbitTemplate;
+import org.springframework.beans.BeanUtils;
 import org.springframework.stereotype.Component;
+import top.felixu.grass.common.core.constants.RabbitConstants;
+import top.felixu.grass.common.core.form.logging.LoggingForm;
+
+import java.util.UUID;
 
 /**
  * 日志实现
@@ -21,13 +27,11 @@ public class LoggerListener implements AccessLoggerListener {
 
     @Override
     public void onLogger(AccessLoggerInfo info) {
-        System.out.println(info.getAction());
-        System.out.println(info.getIp());
-        System.out.println(info.getHttpMethod());
-        System.out.println(info.getMethod());
-        System.out.println(info.getTarget());
-        System.out.println(info.getUrl());
-        System.out.println(info.getDuration());
-        System.out.println(info.getResponse());
+        LoggingForm event = new LoggingForm();
+        BeanUtils.copyProperties(info, event);
+        event.setMethod(info.getMethod().getName());
+        event.setTarget(info.getTarget().getName());
+        CorrelationData correlationId = new CorrelationData(UUID.randomUUID().toString());
+        rabbitTemplate.convertAndSend(RabbitConstants.Exchange.ACCESS_LOGGER, RabbitConstants.RoutingKey.ACCESS_LOGGER, event, correlationId);
     }
 }

@@ -11,8 +11,7 @@
 
     <artifactId>gateway-server</artifactId>
     <version>1.0.0</version>
-    <packaging>jar</packaging>
-    <name>GatewayServer</name>
+    <name>gateway-server</name>
     <description>GrassCloud's Gateway</description>
 
 

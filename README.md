@@ -22,6 +22,7 @@
 | [oauth-server](<https://github.com/felixu1992/GrassCloud/blob/master/oauth-server/HELP.md>) | 认证中心 | 8765 |
 | [base-server](<https://github.com/felixu1992/GrassCloud/blob/master/base-server/HELP.md>) | 用户服务 | 7761 |
 | [generator-server](<https://github.com/felixu1992/GrassCloud/blob/master/generator-server/HELP.md>) | 代码生成 | 7762 |
+| [logging-server](<https://github.com/felixu1992/GrassCloud/blob/master/logging-server/HELP.md>) | 日志服务 | 7763 |
 
 ## 开发规约
 1. 大体遵循阿里规范
@@ -37,6 +38,7 @@
 - [x] 基础Spring Cloud运行起来
 - [x] 整理依赖
 - [x] 使用Spring Cloud Oauth2授权认证
+- [ ] 基础架构整理
 - [ ] 用户服务
 - [ ] 日志服务
 - [ ] 数据字典服务
@@ -45,7 +47,7 @@
 - [ ] 邮件服务
 - [ ] 考勤服务
 - [ ] 工作流服务
-. . . . . . 
+  . . . . . . 
 
 ## 当前任务
-**用户服务**
+**基础架构整理**

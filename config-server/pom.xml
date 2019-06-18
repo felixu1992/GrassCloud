@@ -11,7 +11,7 @@
 
     <artifactId>config-server</artifactId>
     <version>1.0.0</version>
-    <name>ConfigServer</name>
+    <name>config-server</name>
     <description>GrassCloud's Configuration Center</description>
 
     <dependencies>
