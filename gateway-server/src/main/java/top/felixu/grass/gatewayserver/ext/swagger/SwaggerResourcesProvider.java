@@ -5,6 +5,7 @@ import org.springframework.cloud.gateway.discovery.DiscoveryClientRouteDefinitio
 import org.springframework.context.annotation.Primary;
 import org.springframework.stereotype.Component;
 import springfox.documentation.swagger.web.SwaggerResource;
+import top.felixu.grass.common.core.constants.GrassConstants;
 
 import java.util.ArrayList;
 import java.util.Arrays;
@@ -26,7 +27,8 @@ public class SwaggerResourcesProvider implements springfox.documentation.swagger
     private static final String SWAGGER_VERSION = "2.0";
     private static final String EUREKA_SUB_PREFIX = "CompositeDiscoveryClient_";
     private static final String PATTERN = "pattern";
-    private static final List<String> IGNORE = Arrays.asList("GatewayServer", "ConfigServer");
+    private static final List<String> IGNORE = Arrays.asList(GrassConstants.Server.GATEWAY,
+            GrassConstants.Server.CONFIG, GrassConstants.Server.OAUTH);
 
     private final DiscoveryClientRouteDefinitionLocator routeLocator;
 

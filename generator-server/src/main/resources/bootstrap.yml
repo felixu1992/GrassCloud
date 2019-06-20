@@ -4,7 +4,7 @@ spring:
 ---
 spring:
   application:
-    name: GeneratorServer
+    name: generator-server
   profiles: dev
   cloud:
     config:

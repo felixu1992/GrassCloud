@@ -4,7 +4,7 @@ spring:
 ---
 spring:
   application:
-    name: MonitorServer
+    name: monitor-server
   profiles: dev
   cloud:
     config:

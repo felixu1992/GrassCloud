@@ -19,7 +19,9 @@ public interface GrassConstants {
      * 微服务名称
      */
     interface Server {
-        String OAUTH = "OauthServer";
-        String BASE = "BaseServer";
+        String OAUTH = "oauth-server";
+        String BASE = "base-server";
+        String GATEWAY = "gateway-server";
+        String CONFIG = "config-server";
     }
 }

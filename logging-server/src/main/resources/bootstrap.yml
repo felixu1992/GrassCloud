@@ -4,7 +4,7 @@ spring:
 ---
 spring:
   application:
-    name: LoggingServer
+    name: logging-server
   profiles: dev
   cloud:
     config:

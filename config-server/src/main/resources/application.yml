@@ -1,6 +1,6 @@
 spring:
   application:
-    name: ConfigServer
+    name: config-server
   profiles:
     active: native
   cloud:
