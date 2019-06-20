@@ -20,15 +20,16 @@ import top.felixu.grass.gatewayserver.handler.swagger.UiHandler;
 public class RouterFunctionConfiguration {
 
     private final ResourceHandler resourceHandler;
+
     private final SecurityHandler securityHandler;
+
     private final UiHandler uiHandler;
 
     @Bean
     public RouterFunction routerFunction() {
         return RouterFunctions
                 .route(RequestPredicates.GET("/swagger-resources")
-                        .and(RequestPredicates.accept(MediaType.ALL)),
-                        resourceHandler)
+                        .and(RequestPredicates.accept(MediaType.ALL)), resourceHandler)
                 .andRoute(RequestPredicates.GET("/swagger-resources/configuration/security")
                         .and(RequestPredicates.accept(MediaType.ALL)), securityHandler)
                 .andRoute(RequestPredicates.GET("/swagger-resources/configuration/ui")
