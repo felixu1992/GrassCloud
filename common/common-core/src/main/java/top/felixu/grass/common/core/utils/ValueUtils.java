@@ -1,5 +1,7 @@
 package top.felixu.grass.common.core.utils;
 
+import java.util.Optional;
+
 /**
  * 对值进行处理的工具
  *
@@ -17,9 +19,7 @@ public class ValueUtils {
      * @return 返回对象值
      */
     public static <T> T nullAs(T value, T def) {
-        if (null == value) {
-            return def;
-        }
-        return value;
+       return Optional.ofNullable(value)
+                .orElse(def);
     }
 }
