@@ -1,6 +1,7 @@
 package top.felixu.grass.baseserver;
 
 import lombok.AllArgsConstructor;
+import org.mybatis.spring.annotation.MapperScan;
 import org.springframework.boot.SpringApplication;
 import org.springframework.cloud.client.SpringCloudApplication;
 import org.springframework.cloud.openfeign.EnableFeignClients;
@@ -23,6 +24,7 @@ import top.felixu.grass.common.swagger.annotation.EnableSwagger;
 @EnableSwagger
 @EnableFeignClients
 @SpringCloudApplication
+@MapperScan(GrassConstants.BasePackage.NAME)
 @ComponentScan(GrassConstants.BasePackage.NAME)
 public class BaseServerApplication {
 

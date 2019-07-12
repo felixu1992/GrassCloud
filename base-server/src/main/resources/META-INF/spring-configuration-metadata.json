@@ -1,0 +1,24 @@
+{
+  "groups": [
+    {
+      "name": "grass.auth",
+      "type": "top.felixu.grass.baseserver.properties.AuthProperties",
+      "sourceType": "top.felixu.grass.baseserver.properties.AuthProperties"
+    }
+  ],
+  "properties": [
+    {
+      "name": "grass.auth.type",
+      "type": "java.lang.String",
+      "description": "Authorization值",
+      "sourceType": "top.felixu.grass.baseserver.properties.AuthProperties"
+    },
+    {
+      "name": "grass.auth.value",
+      "type": "java.lang.String",
+      "description": "Authorization值",
+      "sourceType": "top.felixu.grass.baseserver.properties.AuthProperties"
+    }
+  ],
+  "hints": []
+}

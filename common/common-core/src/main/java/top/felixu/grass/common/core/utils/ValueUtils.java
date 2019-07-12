@@ -1,6 +1,13 @@
 package top.felixu.grass.common.core.utils;
 
+import org.springframework.util.ObjectUtils;
+import org.springframework.validation.BindingResult;
+import org.springframework.validation.FieldError;
+import top.felixu.grass.common.core.exception.ErrorCode;
+import top.felixu.grass.common.core.exception.GrassException;
+
 import java.util.Optional;
+import java.util.stream.Collectors;
 
 /**
  * 对值进行处理的工具
@@ -21,5 +28,19 @@ public class ValueUtils {
     public static <T> T nullAs(T value, T def) {
        return Optional.ofNullable(value)
                 .orElse(def);
+    }
+
+    public static void checkParams(BindingResult result) {
+        if (!ObjectUtils.isEmpty(result)
+                && result.hasErrors()) {
+            String errorMsg = result.getAllErrors()
+                    .stream()
+                    .map(objectError -> {
+                        FieldError error = (FieldError) objectError;
+                        return error.getField() + ", " + error.getDefaultMessage();
+                    })
+                    .collect(Collectors.joining("\n"));
+            throw new GrassException(ErrorCode.PARAM_ERROR, errorMsg);
+        }
     }
 }

@@ -1,4 +1,4 @@
-package top.felixu.grass.oauthserver.entity;
+package top.felixu.grass.baseserver.entity;
 
 import lombok.Data;
 import lombok.EqualsAndHashCode;
@@ -8,8 +8,12 @@ import top.felixu.grass.common.core.entity.BaseEntity;
 import java.time.LocalDateTime;
 
 /**
+ * <p>
+ * 
+ * </p>
+ *
  * @author felixu
- * @date 2019.07.12
+ * @since 2019-07-12
  */
 @Data
 @EqualsAndHashCode(callSuper = true)
@@ -111,7 +115,7 @@ public class UserInfo extends BaseEntity {
     /**
      * realname首字母
      */
-    private String index;
+    private String prefix;
 
     /**
      * 性别

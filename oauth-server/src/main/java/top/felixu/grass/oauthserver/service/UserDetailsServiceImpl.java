@@ -5,9 +5,9 @@ import org.springframework.security.core.userdetails.UserDetails;
 import org.springframework.security.core.userdetails.UserDetailsService;
 import org.springframework.security.core.userdetails.UsernameNotFoundException;
 import org.springframework.stereotype.Service;
-import top.felixu.grass.oauthserver.dao.UserInfoMapper;
 import top.felixu.grass.oauthserver.entity.GrantedAuthority;
 import top.felixu.grass.oauthserver.entity.UserInfo;
+import top.felixu.grass.oauthserver.mapper.UserInfoMapper;
 
 import java.util.Collections;
 

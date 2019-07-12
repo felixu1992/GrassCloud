@@ -1,8 +1,7 @@
 package top.felixu.grass.common.logging.config;
 
-import lombok.AllArgsConstructor;
-import lombok.NoArgsConstructor;
 import org.springframework.beans.BeansException;
+import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.beans.factory.config.BeanPostProcessor;
 import org.springframework.boot.autoconfigure.condition.ConditionalOnProperty;
 import org.springframework.context.annotation.Bean;
@@ -33,10 +32,9 @@ public class LoggerConfig {
         return new ListenerProcessor();
     }
 
-    @NoArgsConstructor
-    @AllArgsConstructor
     public static class ListenerProcessor implements BeanPostProcessor {
 
+        @Autowired
         private AccessLoggerSupport accessLoggerSupport;
 
         @Override

@@ -36,4 +36,21 @@ grass:
     regexMatchers: .*swagger.*", ".*v2.*"," .*webjars.*", "/user/login.*", "/validate.*", /user/reset-password.*
     antMatchers: /**
   logging:
-    enable: true
+    enable: false
+  auth:
+    value: Basic Z3Jhc3M6ZmVsaXh1
+    type: password
+mybatis-plus:
+  mapper-locations: classpath:mapper/*Mapper.xml
+  configuration:
+    map-underscore-to-camel-case: true
+    cache-enabled: false
+feign:
+  client:
+    config:
+      default:
+        connectTimeout: 5000
+        readTimeout: 5000
+        loggerLevel: full
+#  hystrix:
+#    enabled: true
