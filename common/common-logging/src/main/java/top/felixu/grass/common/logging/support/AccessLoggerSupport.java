@@ -5,7 +5,6 @@ import org.aopalliance.intercept.MethodInterceptor;
 import org.springframework.aop.support.StaticMethodMatcherPointcutAdvisor;
 import org.springframework.core.Ordered;
 import top.felixu.grass.common.core.utils.HttpUtils;
-import top.felixu.grass.common.core.utils.TimeUtils;
 import top.felixu.grass.common.logging.annotation.AccessLogger;
 import top.felixu.grass.common.logging.aop.MethodInterceptorHolder;
 import top.felixu.grass.common.logging.logger.AccessLoggerInfo;
@@ -40,7 +39,7 @@ public class AccessLoggerSupport extends StaticMethodMatcherPointcutAdvisor {
             try {
                 response = methodInvocation.proceed();
                 info.setResponse(response);
-                info.setResponseTime(TimeUtils.currentTimeMills());
+                info.setResponseTime(System.currentTimeMillis());
                 info.setDuration(info.getResponseTime() - info.getRequestTime());
             } catch (Throwable e) {
                 info.setError(e);
@@ -54,7 +53,7 @@ public class AccessLoggerSupport extends StaticMethodMatcherPointcutAdvisor {
 
     private AccessLoggerInfo createLogger(MethodInterceptorHolder holder) {
         AccessLoggerInfo info = new AccessLoggerInfo();
-        info.setRequestTime(TimeUtils.currentTimeMills());
+        info.setRequestTime(System.currentTimeMillis());
         AccessLogger ann = holder.findAnnotation(AccessLogger.class);
         info.setAction(ann.value());
         info.setParameters(holder.getArgs());
