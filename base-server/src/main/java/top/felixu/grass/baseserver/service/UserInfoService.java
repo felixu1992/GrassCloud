@@ -40,7 +40,7 @@ public class UserInfoService extends ServiceImpl<UserInfoMapper, UserInfo> imple
         // TODO 密码校验规则，可以用全局缓存来做，减少一次IO
         UserInfo user = findByLogin(form.getUsername());
         JwtDTO jwt = oauthServerClient.getToken(authProperties.getValue(),
-                authProperties.getType(), user.getLoginName(), form.getPassword());
+                authProperties.getType(), user.getEmployeeNum(), form.getPassword());
         log.info("Login Success: user={}, jwt={}", user, jwt);
         return null;
     }

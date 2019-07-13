@@ -2,8 +2,10 @@ package top.felixu.grass.common.datasource.config;
 
 import com.baomidou.mybatisplus.extension.plugins.PaginationInterceptor;
 import com.baomidou.mybatisplus.extension.plugins.PerformanceInterceptor;
+import org.mybatis.spring.annotation.MapperScan;
 import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Configuration;
+import top.felixu.grass.common.core.constants.GrassConstants;
 
 /**
  * Mybatis-Plus的配置
@@ -11,8 +13,8 @@ import org.springframework.context.annotation.Configuration;
  * @author felixu
  * @date 2019.06.12
  */
-
 @Configuration
+@MapperScan(GrassConstants.BasePackage.NAME)
 public class MybatisPlusConfig {
 
     /**

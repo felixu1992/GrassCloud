@@ -37,9 +37,9 @@ public class ValueUtils {
                     .stream()
                     .map(objectError -> {
                         FieldError error = (FieldError) objectError;
-                        return error.getField() + ", " + error.getDefaultMessage();
+                        return error.getField() + ": " + error.getDefaultMessage();
                     })
-                    .collect(Collectors.joining("\n"));
+                    .collect(Collectors.joining(", "));
             throw new GrassException(ErrorCode.PARAM_ERROR, errorMsg);
         }
     }

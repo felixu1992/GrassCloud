@@ -36,6 +36,12 @@
         <dependency>
             <groupId>top.felixu.grass</groupId>
             <artifactId>common-core</artifactId>
+            <exclusions>
+                <exclusion>
+                    <groupId>top.felixu.grass</groupId>
+                    <artifactId>common-security</artifactId>
+                </exclusion>
+            </exclusions>
         </dependency>
     </dependencies>
 </project>

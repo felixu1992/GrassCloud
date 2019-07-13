@@ -39,7 +39,7 @@ public class AuthorizationServerConfig extends AuthorizationServerConfigurerAdap
                 .autoApprove(true)
                 .authorizedGrantTypes("implicit", "refresh_token", "password", "authorization_code")
                 // 过期时间，以秒为单位
-                .accessTokenValiditySeconds(3 * 60);
+                .accessTokenValiditySeconds(24 * 60 * 60);
     }
 
     @Override
