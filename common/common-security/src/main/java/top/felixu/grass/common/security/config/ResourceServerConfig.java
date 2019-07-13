@@ -32,7 +32,7 @@ public class ResourceServerConfig extends ResourceServerConfigurerAdapter {
                 .regexMatchers(securityProperties.getRegexMatchers())
                 .permitAll()
                 .antMatchers(securityProperties.getAntMatchers())
-                .permitAll();
+                .authenticated();
     }
 
 

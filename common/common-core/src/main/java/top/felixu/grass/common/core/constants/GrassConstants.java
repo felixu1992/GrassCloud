@@ -24,4 +24,8 @@ public interface GrassConstants {
         String GATEWAY = "gateway-server";
         String CONFIG = "config-server";
     }
+
+    interface Oauth {
+        String AUTHORIZATION = "authorization";
+    }
 }

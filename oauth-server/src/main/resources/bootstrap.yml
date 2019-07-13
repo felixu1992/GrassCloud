@@ -28,3 +28,8 @@ spring:
       logAbandoned: true
       poolPreparedStatements: true
       maxOpenPreparedStatements: 100
+mybatis-plus:
+  mapper-locations: classpath:mapper/*Mapper.xml
+  configuration:
+    map-underscore-to-camel-case: true
+    cache-enabled: false
