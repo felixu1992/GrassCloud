@@ -16,6 +16,8 @@ import java.util.List;
 @EqualsAndHashCode(callSuper = true)
 public class UserDetails extends UserInfo implements org.springframework.security.core.userdetails.UserDetails, Serializable {
 
+    private static final long serialVersionUID = 1L;
+
     private List<top.felixu.grass.oauthserver.entity.GrantedAuthority> grantedAuthorities;
 
     @Override
@@ -25,7 +27,7 @@ public class UserDetails extends UserInfo implements org.springframework.securit
 
     @Override
     public String getUsername() {
-        return getEmployeeNum();
+        return getId() + "";
     }
 
     @Override

@@ -25,7 +25,17 @@ public interface GrassConstants {
         String CONFIG = "config-server";
     }
 
+    /**
+     * 请求token权限头
+     */
     interface Oauth {
         String AUTHORIZATION = "authorization";
+    }
+
+    /**
+     * 通用标识
+     */
+    interface Default {
+        String STRANGER_USER_ID = "-1";
     }
 }
