@@ -6,6 +6,7 @@ import com.baomidou.mybatisplus.extension.service.IService;
 import com.baomidou.mybatisplus.extension.service.impl.ServiceImpl;
 import lombok.AllArgsConstructor;
 import lombok.extern.slf4j.Slf4j;
+import org.springframework.cache.annotation.CachePut;
 import org.springframework.stereotype.Service;
 import top.felixu.grass.baseserver.entity.UserInfo;
 import top.felixu.grass.baseserver.mapper.UserInfoMapper;
@@ -30,6 +31,7 @@ public class UserInfoService extends ServiceImpl<UserInfoMapper, UserInfo> imple
 
     private final AuthProperties authProperties;
 
+    @CachePut(value = "user", key = "'grass_' + #result.getUserId()", unless = "#result == null")
     public LoginDTO login(LoginForm form) {
         /**
          * 1. 密码规则校验
@@ -42,7 +44,10 @@ public class UserInfoService extends ServiceImpl<UserInfoMapper, UserInfo> imple
         JwtDTO jwt = oauthServerClient.getToken(authProperties.getValue(),
                 authProperties.getType(), user.getEmployeeNum(), form.getPassword());
         log.info("Login Success: user={}, jwt={}", user, jwt);
-        return null;
+        LoginDTO loginUser = new LoginDTO();
+        loginUser.setUserId(user.getId());
+        loginUser.setToken(jwt.getAccessToken());
+        return loginUser;
     }
 
     public UserInfo findByLogin(String loginParam) {
