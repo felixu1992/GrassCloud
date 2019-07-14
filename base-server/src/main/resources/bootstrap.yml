@@ -28,23 +28,6 @@ spring:
       logAbandoned: true
       poolPreparedStatements: true
       maxOpenPreparedStatements: 100
-  redis:
-    host: localhost
-    port: 6379
-    timeout: 6000ms
-    lettuce:
-      pool:
-        max-active: 1000
-        max-idle: 100
-        min-idle: 20
-  session:
-    store-type: redis
-  cache:
-    redis:
-      use-key-prefix: true
-      cache-null-values: false
-      time-to-live: 86400000ms
-      key-prefix: grass
 grass:
   swagger:
     title: ${spring.application.name}'s Api文档
@@ -62,12 +45,3 @@ mybatis-plus:
   configuration:
     map-underscore-to-camel-case: true
     cache-enabled: false
-feign:
-  client:
-    config:
-      default:
-        connectTimeout: 5000
-        readTimeout: 5000
-        loggerLevel: full
-#  hystrix:
-#    enabled: true
