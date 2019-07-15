@@ -43,7 +43,7 @@
 
     <logger name="top.felixu.grass" level="DEBUG" />
     <logger name="org.mybatis.spring" level="INFO" />
-    <logger name="com.netflix.discovery" level="DEBUG" />
+    <logger name="com.netflix.discovery" level="INFO" />
     <logger name="org.springframework.amqp.rabbit" level="INFO" />
 
 
