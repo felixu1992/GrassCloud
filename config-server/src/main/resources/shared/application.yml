@@ -1,9 +1,19 @@
 # 此配置文件为多模块多环境下共享，对所有拉取配置的服务生效
+
 # 注册中心
 eureka:
   client:
+    registryFetchIntervalSeconds: 5
     service-url:
       defaultZone: http://localhost:8761/eureka/
+  instance:
+    leaseRenewalIntervalInSeconds: 10
+    health-check-url-path: /actuator/health
+    metadata-map:
+      "user.name": ${spring.security.user.name}
+      "user.password": ${spring.security.user.password}
+      startup: ${random.int}
+
 spring:
   # rabbitmq 相关配置
   rabbitmq:
@@ -36,6 +46,11 @@ spring:
       time-to-live: 86400000ms
 # Spring Cache Key 的前缀
 #      key-prefix: grass
+  security:
+    user:
+      name: felixu
+      password: felixu
+
 # feign 请求的日志
 feign:
   client:
@@ -44,6 +59,23 @@ feign:
         connectTimeout: 5000
         readTimeout: 5000
         loggerLevel: full
+  # 开启熔断
+  hystrix:
+    enabled: true
 
-#  hystrix:
-#    enabled: true
+# Mybatis Plus 相关全局配置
+mybatis-plus:
+  mapper-locations: classpath:mapper/*Mapper.xml
+  configuration:
+    map-underscore-to-camel-case: true
+    cache-enabled: false
+  global-config:
+    banner: false
+management:
+  endpoints:
+    web:
+      exposure:
+        include: '*'
+  endpoint:
+    health:
+      show-details: always

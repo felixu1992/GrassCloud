@@ -1,6 +1,5 @@
 package top.felixu.grass.baseserver;
 
-import lombok.AllArgsConstructor;
 import org.springframework.boot.SpringApplication;
 import org.springframework.cache.annotation.EnableCaching;
 import org.springframework.cloud.client.SpringCloudApplication;
@@ -18,9 +17,8 @@ import top.felixu.grass.common.swagger.annotation.EnableSwagger;
  * @date 2019.6.15
  */
 @EnableCaching
-@AllArgsConstructor
-@RestController
 @EnableSwagger
+@RestController
 @EnableFeignClients
 @SpringCloudApplication
 @ComponentScan(GrassConstants.BasePackage.NAME)

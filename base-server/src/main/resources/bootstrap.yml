@@ -28,20 +28,35 @@ spring:
       logAbandoned: true
       poolPreparedStatements: true
       maxOpenPreparedStatements: 100
+#  boot:
+#    admin:
+#      client:
+#        url: http://localhost:8764
+#        username: user
+#        password: felixu
+#        instance:
+#          prefer-ip: true
 grass:
   swagger:
     title: ${spring.application.name}'s Api文档
   security:
     resourceId: ${spring.application.name}
-    regexMatchers: .*swagger.*, .*v2.*, .*webjars.*, /user/login.*, /validate.*, /user/reset-password.*
+    regexMatchers: .*swagger.*, .*v2.*, .*webjars.*, /user/login.*, /validate.*, /user/reset-password.*, /hystrix.*, /actuator.*, /info.*
     antMatchers: /**
   logging:
     enable: false
   auth:
     value: Basic Z3Jhc3M6ZmVsaXh1
     type: password
-mybatis-plus:
-  mapper-locations: classpath:mapper/*Mapper.xml
-  configuration:
-    map-underscore-to-camel-case: true
-    cache-enabled: false
+#eureka:
+#  instance:
+#    metadata-map:
+#      management:
+#        context-path: ${server.servlet.context-path}/actuator
+#    health-check-url-path: ${server.servlet.context-path}/actuator/health
+#    status-page-url-path: ${server.servlet.context-path}/actuator/info
+#server:
+#  servlet:
+logging:
+  file: base-server/logs/base-server-2019-07-15.0.log
+#    context-path: /
