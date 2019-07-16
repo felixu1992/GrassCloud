@@ -17,7 +17,7 @@ import java.util.*;
  */
 public class HttpUtils {
 
-    private static ServletRequestAttributes getRequestAttributes() {
+    public static ServletRequestAttributes getRequestAttributes() {
         return Optional.ofNullable((ServletRequestAttributes) RequestContextHolder.getRequestAttributes())
                 .orElseThrow(() -> new GrassException(ErrorCode.FAIL, "ServletRequestAttributes Is Null"));
     }

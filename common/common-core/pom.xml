@@ -33,10 +33,10 @@
         </dependency>
 
         <!-- Common Security -->
-        <dependency>
-            <groupId>top.felixu.grass</groupId>
-            <artifactId>common-security</artifactId>
-        </dependency>
+<!--        <dependency>-->
+<!--            <groupId>top.felixu.grass</groupId>-->
+<!--            <artifactId>common-security</artifactId>-->
+<!--        </dependency>-->
 
         <!-- Redis Connection Pool -->
         <dependency>

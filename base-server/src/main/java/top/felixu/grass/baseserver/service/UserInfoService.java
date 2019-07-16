@@ -14,7 +14,11 @@ import top.felixu.grass.baseserver.properties.AuthProperties;
 import top.felixu.grass.baseserver.remote.OauthServerClient;
 import top.felixu.grass.common.core.dto.base.LoginDTO;
 import top.felixu.grass.common.core.dto.oauth.JwtDTO;
+import top.felixu.grass.common.core.form.base.AddLoginRecordForm;
 import top.felixu.grass.common.core.form.base.LoginForm;
+import top.felixu.grass.common.core.utils.HttpUtils;
+
+import java.time.LocalDateTime;
 
 /**
  * User 业务操作实现类
@@ -31,14 +35,12 @@ public class UserInfoService extends ServiceImpl<UserInfoMapper, UserInfo> imple
 
     private final AuthProperties authProperties;
 
+    private final LoginRecordService loginRecordService;
+
     @CachePut(value = "user", key = "'grass_' + #result.getUserId()", unless = "#result == null")
     public LoginDTO login(LoginForm form) {
-        /**
-         * 1. 密码规则校验
-         * 2. 错误锁定逻辑
-         * 3. 认证授权
-         * 4. 登录记录
-         */
+        // 密码校验规则
+        // 错误锁定逻辑
         // TODO 密码校验规则，可以用全局缓存来做，减少一次IO
         UserInfo user = findByLogin(form.getUsername());
         JwtDTO jwt = oauthServerClient.getToken(authProperties.getValue(),
@@ -47,6 +49,19 @@ public class UserInfoService extends ServiceImpl<UserInfoMapper, UserInfo> imple
         LoginDTO loginUser = new LoginDTO();
         loginUser.setUserId(user.getId());
         loginUser.setToken(jwt.getAccessToken());
+
+        // 登录记录
+        AddLoginRecordForm event = new AddLoginRecordForm();
+        event.setLoginIp(HttpUtils.getIpAddress());
+        event.setLoginName(user.getLoginName());
+        event.setLoginTime(LocalDateTime.now());
+        event.setUserId(user.getId());
+        loginRecordService.addRecord(event);
+
+        // 查询拥有菜单
+
+        // 查询拥有角色
+
         return loginUser;
     }
 

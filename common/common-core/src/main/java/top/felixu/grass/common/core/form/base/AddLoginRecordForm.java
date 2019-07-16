@@ -1,24 +1,16 @@
-package top.felixu.grass.baseserver.entity;
+package top.felixu.grass.common.core.form.base;
 
 import lombok.Data;
-import lombok.EqualsAndHashCode;
-import lombok.experimental.Accessors;
-import top.felixu.grass.common.datasource.entity.BaseEntity;
 
+import java.io.Serializable;
 import java.time.LocalDateTime;
 
 /**
- * <p>
- * 
- * </p>
- *
  * @author felixu
- * @since 2019-07-12
+ * @date 2019.07.16
  */
 @Data
-@EqualsAndHashCode(callSuper = true)
-@Accessors(chain = true)
-public class LoginRecord extends BaseEntity {
+public class AddLoginRecordForm implements Serializable {
 
     private static final long serialVersionUID = 1L;
 
