@@ -30,6 +30,13 @@ public class ValueUtils {
                 .orElse(def);
     }
 
+    public static <T> T sameAs(T source, T same, T target) {
+        if (source.equals(same)) {
+            return target;
+        }
+        return source;
+    }
+
     public static void checkParams(BindingResult result) {
         if (!ObjectUtils.isEmpty(result)
                 && result.hasErrors()) {

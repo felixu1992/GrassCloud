@@ -71,6 +71,8 @@ mybatis-plus:
     cache-enabled: false
   global-config:
     banner: false
+
+# 暴露心跳相关端口
 management:
   endpoints:
     web:

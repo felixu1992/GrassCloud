@@ -37,5 +37,16 @@ public interface GrassConstants {
      */
     interface Default {
         String STRANGER_USER_ID = "-1";
+        String STRANGER_USER_STR = "anonymousUser";
+    }
+
+    /**
+     * 通用字段
+     */
+    interface Field {
+        String CREATE_BY = "createBy";
+        String CREATE_TIME = "createTime";
+        String UPDATE_BY = "updateBy";
+        String UPDATE_TIME = "updateTime";
     }
 }

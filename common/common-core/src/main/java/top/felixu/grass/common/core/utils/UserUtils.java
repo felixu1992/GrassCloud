@@ -1,8 +1,8 @@
 package top.felixu.grass.common.core.utils;
 
-import org.springframework.security.core.context.SecurityContextHolder;
-import org.springframework.stereotype.Component;
+import org.springframework.web.context.request.RequestAttributes;
 import top.felixu.grass.common.core.constants.GrassConstants;
+import top.felixu.grass.common.core.constants.UserConstants;
 
 /**
  * 用户相关操作
@@ -10,7 +10,6 @@ import top.felixu.grass.common.core.constants.GrassConstants;
  * @author felixu
  * @date 2019.07.13
  */
-@Component
 public class UserUtils {
 
     /**
@@ -18,7 +17,7 @@ public class UserUtils {
      *
      * @return token
      */
-    public static String getCurrentAuth() {
+    public static String getCurrentToken() {
         return HttpUtils.getHeaders().get(GrassConstants.Oauth.AUTHORIZATION);
     }
 
@@ -28,7 +27,8 @@ public class UserUtils {
      * @return userId
      */
     public static long getCurrentUserId() {
-        String userId = (String) SecurityContextHolder.getContext().getAuthentication().getPrincipal();
-        return Long.parseLong(ValueUtils.nullAs(userId, GrassConstants.Default.STRANGER_USER_ID));
+        String userIdStr = (String) HttpUtils.getRequestAttributes().getAttribute(UserConstants.Field.USER_ID,
+                RequestAttributes.SCOPE_REQUEST);
+        return Long.parseLong(ValueUtils.nullAs(userIdStr, GrassConstants.Default.STRANGER_USER_ID));
     }
 }
