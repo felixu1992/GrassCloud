@@ -20,6 +20,7 @@
             <artifactId>spring-cloud-starter-oauth2</artifactId>
         </dependency>
 
+        <!-- Common Core -->
         <dependency>
             <groupId>top.felixu.grass</groupId>
             <artifactId>common-core</artifactId>

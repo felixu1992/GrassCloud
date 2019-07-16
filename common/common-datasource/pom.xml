@@ -39,6 +39,7 @@
             <version>${mybatis-plus.version}</version>
         </dependency>
 
+        <!-- Common Core -->
         <dependency>
             <groupId>top.felixu.grass</groupId>
             <artifactId>common-core</artifactId>

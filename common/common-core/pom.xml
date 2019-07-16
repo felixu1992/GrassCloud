@@ -32,12 +32,6 @@
             <artifactId>spring-boot-starter-data-redis</artifactId>
         </dependency>
 
-        <!-- Common Security -->
-<!--        <dependency>-->
-<!--            <groupId>top.felixu.grass</groupId>-->
-<!--            <artifactId>common-security</artifactId>-->
-<!--        </dependency>-->
-
         <!-- Redis Connection Pool -->
         <dependency>
             <groupId>org.apache.commons</groupId>
@@ -51,12 +45,7 @@
             <artifactId>spring-boot-starter-cache</artifactId>
         </dependency>
 
-<!--        <dependency>-->
-<!--            <groupId>de.codecentric</groupId>-->
-<!--            <artifactId>spring-boot-admin-starter-client</artifactId>-->
-<!--            <version>2.1.4</version>-->
-<!--        </dependency>-->
-
+        <!-- Spring Boot Admin -->
         <dependency>
             <groupId>org.jolokia</groupId>
             <artifactId>jolokia-core</artifactId>
