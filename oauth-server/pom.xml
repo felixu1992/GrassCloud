@@ -31,11 +31,5 @@
             <groupId>top.felixu.grass</groupId>
             <artifactId>common-datasource</artifactId>
         </dependency>
-
-        <!-- Common Core -->
-        <dependency>
-            <groupId>top.felixu.grass</groupId>
-            <artifactId>common-core</artifactId>
-        </dependency>
     </dependencies>
 </project>
