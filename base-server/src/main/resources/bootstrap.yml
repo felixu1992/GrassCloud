@@ -36,7 +36,7 @@ grass:
     regexMatchers: .*swagger.*, .*v2.*, .*webjars.*, /user/login.*, /validate.*, /user/reset-password.*, /hystrix.*, /actuator.*, /info.*
     antMatchers: /**
   logging:
-    enable: false
+    enable: true
   auth:
     value: Basic Z3Jhc3M6ZmVsaXh1
     type: password

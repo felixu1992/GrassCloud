@@ -46,6 +46,11 @@
         </dependency>
 
         <dependency>
+            <groupId>top.felixu.grass</groupId>
+            <artifactId>common-datasource</artifactId>
+        </dependency>
+
+        <dependency>
             <groupId>mysql</groupId>
             <artifactId>mysql-connector-java</artifactId>
         </dependency>

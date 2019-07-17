@@ -22,7 +22,8 @@ public class AccessLoggerInfo {
      */
     private Method method;
     /**
-     * 请求目  */
+     * 请求目标类
+     */
     private Class target;
     /**
      * 请求入参
