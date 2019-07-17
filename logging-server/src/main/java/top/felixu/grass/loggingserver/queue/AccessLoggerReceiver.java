@@ -1,8 +1,10 @@
 package top.felixu.grass.loggingserver.queue;
 
+import lombok.AllArgsConstructor;
 import lombok.extern.slf4j.Slf4j;
 import org.springframework.stereotype.Component;
-import top.felixu.grass.common.core.form.logging.LoggingForm;
+import top.felixu.grass.common.core.form.logging.LogInfoForm;
+import top.felixu.grass.loggingserver.service.LogInfoService;
 
 /**
  * @author felixu
@@ -10,9 +12,17 @@ import top.felixu.grass.common.core.form.logging.LoggingForm;
  */
 @Slf4j
 @Component
+@AllArgsConstructor
 public class AccessLoggerReceiver {
 
-    public void receiveMessage(LoggingForm event) {
-        log.info("[AccessLoggerReceiver#receiveMessage] ===> event={}", event);
+    private final LogInfoService logInfoService;
+
+    public void receiveMessage(LogInfoForm event) {
+        try {
+            log.info("[AccessLoggerReceiver#receiveMessage] ===> event={}", event);
+            logInfoService.addLogInfo(event);
+        } catch (Exception e) {
+            log.error("[AccessLoggerReceiver#receiveMessage] ===> error={}", e.getLocalizedMessage());
+        }
     }
 }

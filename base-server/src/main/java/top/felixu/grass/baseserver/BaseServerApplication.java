@@ -10,6 +10,7 @@ import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.RestController;
 import top.felixu.grass.common.core.constants.GrassConstants;
 import top.felixu.grass.common.core.dto.BaseResp;
+import top.felixu.grass.common.logging.annotation.AccessLogger;
 import top.felixu.grass.common.swagger.annotation.EnableSwagger;
 
 /**
@@ -28,6 +29,7 @@ public class BaseServerApplication {
 		SpringApplication.run(BaseServerApplication.class, args);
 	}
 
+	@AccessLogger("瞎特么测试的")
 	@PreAuthorize("hasAuthority('ROLE_ADMIN')")
 	@GetMapping("/test")
 	public BaseResp<String> test() {

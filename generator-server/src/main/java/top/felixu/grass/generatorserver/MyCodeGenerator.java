@@ -54,7 +54,7 @@ public class MyCodeGenerator {
 
         // 数据源配置
         DataSourceConfig dsc = new DataSourceConfig();
-        dsc.setUrl("jdbc:mysql://localhost:3306/grass_user?useUnicode=true&useSSL=false&characterEncoding=utf8");
+        dsc.setUrl("jdbc:mysql://localhost:3306/grass_log?useUnicode=true&useSSL=false&characterEncoding=utf8");
         dsc.setDriverName("com.mysql.cj.jdbc.Driver");
         dsc.setUsername("root");
         dsc.setPassword("felix19920320");
@@ -119,7 +119,7 @@ public class MyCodeGenerator {
         StrategyConfig strategy = new StrategyConfig();
         strategy.setNaming(NamingStrategy.underline_to_camel);
         strategy.setColumnNaming(NamingStrategy.underline_to_camel);
-        strategy.setSuperEntityClass("top.felixu.grass.common.core.entity.BaseEntity");
+        strategy.setSuperEntityClass("top.felixu.grass.common.datasource.entity.BaseEntity");
         strategy.setEntityLombokModel(true);
         strategy.setRestControllerStyle(true);
 //        strategy.setSuperControllerClass("com.baomidou.ant.common.BaseController");
