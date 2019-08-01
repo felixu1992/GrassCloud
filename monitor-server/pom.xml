@@ -19,6 +19,12 @@
     </properties>
 
     <dependencies>
+        <!-- Hystrix Dashboard -->
+        <dependency>
+            <groupId>org.springframework.cloud</groupId>
+            <artifactId>spring-cloud-starter-netflix-hystrix-dashboard</artifactId>
+        </dependency>
+
         <!-- Spring Boot Admin Server -->
         <dependency>
             <groupId>de.codecentric</groupId>
