@@ -22,6 +22,8 @@ public enum ErrorCode {
 
     PARAM_NPE(100, "参数为空"),
     PARAM_ERROR(101, "参数错误"),
+
+    LOGIN_ERROR(2000, "登陆失败"),
     ;
 
     /**
