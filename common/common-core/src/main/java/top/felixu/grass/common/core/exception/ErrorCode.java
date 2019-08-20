@@ -23,7 +23,9 @@ public enum ErrorCode {
     PARAM_NPE(100, "参数为空"),
     PARAM_ERROR(101, "参数错误"),
 
-    LOGIN_ERROR(2000, "登陆失败"),
+
+    PASSWORD_ERROR(2000, "账号或密码错误，请重新输入"),
+    LOGIN_ERROR(2001, "登陆失败，请稍后重试"),
     ;
 
     /**
