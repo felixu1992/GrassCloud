@@ -33,7 +33,6 @@ public class SwaggerResourcesProvider implements springfox.documentation.swagger
     private final DiscoveryClientRouteDefinitionLocator routeLocator;
 
     @Override
-
     public List<SwaggerResource> get() {
         List<SwaggerResource> resources = new ArrayList<>();
         //从DiscoveryClientRouteDefinitionLocator 中取出routes，构造成swaggerResource
@@ -44,7 +43,6 @@ public class SwaggerResourcesProvider implements springfox.documentation.swagger
                         routeDefinition.getPredicates().get(0).getArgs().get(PATTERN).replace("/**", API_URI)));
             }
         });
-
         return resources;
 
     }

@@ -1,9 +1,6 @@
 package top.felixu.grass.common.core.utils;
 
-import java.time.LocalDate;
-import java.time.LocalDateTime;
-import java.time.LocalTime;
-import java.time.ZoneId;
+import java.time.*;
 import java.time.format.DateTimeFormatter;
 import java.util.Date;
 
@@ -164,5 +161,13 @@ public class DateUtils {
      */
     public static Date atStartOfDay(LocalDate date) {
         return localDateTimeToDate(date.atStartOfDay());
+    }
+
+    public static void main(String[] args) {
+        LocalDateTime localDateTime = LocalDateTime.now();
+        LocalDate localDate = LocalDate.now();
+        localDate.isLeapYear();
+        Month month = localDate.getMonth();
+        LocalTime localTime = LocalTime.now();
     }
 }
