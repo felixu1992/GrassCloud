@@ -5,7 +5,6 @@
     - maven的版本控制
 - `common-core` `common`的核心包，用于放置通用的`utils`、`exception`、`dto`、`form`等等。
     - 放一些通用工具类，实体，依赖等
-- `common-swagger` `swagger`相关，引用该模块，即拥有`swagger`的能力。 
     - 提供`grass.swagger.xxx`形式的yml配置     
 - `common-datasource` 数据连接能力   
 - `common-security` oauth2客户端

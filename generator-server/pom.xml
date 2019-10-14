@@ -15,9 +15,11 @@
 
 
     <dependencies>
+        <!-- swagger -->
         <dependency>
-            <groupId>top.felixu.grass</groupId>
-            <artifactId>common-swagger</artifactId>
+            <groupId>top.felixu</groupId>
+            <artifactId>swagger-spring-boot-starter</artifactId>
+            <version>1.0.0.RELEASE</version>
         </dependency>
 
         <!-- Mybatis-Plus's Generator -->
