@@ -49,7 +49,8 @@
 - [ ] 工作流服务
   . . . . . . 
 
-## 当前任务
-**基础架构整理**
-
-> 由于接下来要专注于别的事情，暂时放缓更新速度，两个月后再加速迭代速度
+## 自定义包
+- swagger-spring-boot-starter `swagger`起步依赖包，[see](https://github.com/felixu1992/swagger-spring-boot-starter)
+- common 基础包(待完成)
+- logging 日志基础`jar`包(待完成)
+- mybatis-spring-boot-starter 封装自己起步依赖包(待完成)
